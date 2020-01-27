@@ -41,6 +41,18 @@ void Level::handleInput()
 		input->setKeyUp(sf::Keyboard::L);
 	}
 
+	if (input->isMouseLDown() && dragStart.x == NULL) 
+	{
+		dragStart.x = position.x;
+		dragStart.y = position.y;
+	}
+	else if (!input->isMouseLDown() && dragStart.x != NULL) 
+	{
+		int dragDistance = sqrt(((position.x - dragStart.x) * (position.x - dragStart.x)) + ((position.y - dragStart.y) * (position.y - dragStart.y)));
+		dragStart.x = NULL;
+		cout << dragDistance << "\n";
+	}
+
 }
 
 // Update game objects

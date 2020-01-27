@@ -28,4 +28,7 @@ private:
 	sf::Vector2i position;
 	sf::Font font;
 	sf::Text text;
+
+	sf::Vector2i dragStart;
+	int dragDistance;
 };
